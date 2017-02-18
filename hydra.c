@@ -6,7 +6,7 @@
 /*   By: myoung <myoung@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/18 11:00:53 by myoung            #+#    #+#             */
-/*   Updated: 2017/02/18 11:14:39 by myoung           ###   ########.fr       */
+/*   Updated: 2017/02/18 11:20:19 by myoung           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int main(int argc, char **argv)
 	bzero(&serv_addr, sizeof(serv_addr));
 	bzero(send_buff, sizeof(send_buff));
 	serv_addr.sin_family = AF_INET;
-	serv_addr.sin_addr.s_addr = hton1(INADDER_ANY);
+	serv_addr.sin_addr.s_addr = htonl(INADDR_ANY);
 	serv_addr.sin_port = htons(5000);
 	bind(listen_fd, (struct sockaddr*)&serv_addr, sizeof(serv_addr));
 	listen(listen_fd, 10);
